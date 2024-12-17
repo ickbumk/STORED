@@ -1,4 +1,4 @@
-# STORED
+# STORED (Stochastic Regression for Denoising with Random Sampling)
 3D Point Cloud outlier detection and noise correction using Gaussian Process Regression. The STORED is designed for Point Cloud (PCD) outlier removal and denoising at single-perspective scanning level, before PCD registration. The computational cost for training is $On^3$, and $On^2m$ for prediction, where $n$ is the training dataset $m$ is the prediction dataset. Therefore, the STORED can be implemented in **real time** when the input PCD is small in size. Implementation in both _Jupyter Notebook_ and _Python_ are provided.
 
 ![Figure 1: Different Percentages](different_percentages.png "Figure 1: Qualitative outlier removal and noise correction on the Stanford Bunny with varying outlier composition")
