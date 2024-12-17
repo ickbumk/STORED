@@ -46,3 +46,20 @@ weighted_prediction = weighted_pred(mean_all, std_all)
 ```
 
 Use lower _n_iter_ for better noise correction. Higher _n_iter_ results in over-training. Suggested range is 5~20.
+
+# To run a demo (Python)
+
+``` bash
+python sample.py
+```
+
+# To run on command line (Python)
+``` bash
+python create_noisy_pcd.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter]
+python outlier_score.py --filename "{your_dataset}_noisy.npy" --sample_size [your_sample_size] --iter [your_iter]
+python outlier_removal.py --filename "{your_dataset}_noisy.npy" --score [your_threshold]
+python noise_correction.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter] --pred_batch [True or False] --predset [your_prediction_set]
+
+```
+# To run a demo (Jupyter)
+Simply run _stored.ipynb_
