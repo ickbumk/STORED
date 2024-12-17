@@ -1,5 +1,5 @@
 # STORED
-3D Point Cloud outlier detection and noise correction using Gaussian Process Regression
+3D Point Cloud outlier detection and noise correction using Gaussian Process Regression. The STORED is designed for Point Cloud (PCD) outlier removal and denoising at single-perspective scanning level, before PCD registration.
 
 
 
