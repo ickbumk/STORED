@@ -21,6 +21,21 @@ gpytorch == 1.11
 * _utils.py_ contains visualization codes, metrics, normalization, etc
 * _stored.ipynb_ contains jupyter notebook code for running a sample outlier detection and denoising for the front angle scan of _Stanford Bunny_. (Full Dataset can be retrieved from [The Stanford 3D Scanning Repository](https://graphics.stanford.edu/data/3Dscanrep)).
 
+# To run a demo
+
+``` bash
+python sample.py
+```
+
+# To run on command line
+``` bash
+python create_noisy_pcd.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter]
+python outlier_score.py --filename "{your_dataset}_noisy.npy" --sample_size [your_sample_size] --iter [your_iter]
+python outlier_removal.py --filename "{your_dataset}_noisy.npy" --score [your_threshold]
+python noise_correction.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter] --pred_batch [True or False] --predset [your_prediction_set]
+
+```
+
 # Outlier Detection
 
 You can classify outliers
