@@ -1,5 +1,7 @@
 # STORED
-3D Point Cloud outlier detection and noise correction using Gaussian Process Regression. The STORED is designed for Point Cloud (PCD) outlier removal and denoising at single-perspective scanning level, before PCD registration.
+3D Point Cloud outlier detection and noise correction using Gaussian Process Regression. The STORED is designed for Point Cloud (PCD) outlier removal and denoising at single-perspective scanning level, before PCD registration. The computational cost for training is $On^3$, and $On^2m$ for prediction, where $n$ is the training dataset $m$ is the prediction dataset. Therefore, the STORED can be implemented in **real time** when the input PCD is small in size. Implementation in both _Jupyter Notebook_ and _Python_ are provided.
+
+![Figure 1: Different Percentages](different_percentages.png "Figure 1: Qualitative outlier removal and noise correction on the Stanford Bunny with varying outlier composition")
 
 
 
@@ -15,26 +17,6 @@ torchvision == 0.18.1+cu121
 gpytorch == 1.11
 
 
-# File Details
-
-* _gprgpu_toolkit.py_ contains Gaussian Process Regression Model, tools to tune hyperparameters, and predict with standard deviation
-* _utils.py_ contains visualization codes, metrics, normalization, etc
-* _stored.ipynb_ contains jupyter notebook code for running a sample outlier detection and denoising for the front angle scan of _Stanford Bunny_. (Full Dataset can be retrieved from [The Stanford 3D Scanning Repository](https://graphics.stanford.edu/data/3Dscanrep)).
-
-# To run a demo
-
-``` bash
-python sample.py
-```
-
-# To run on command line
-``` bash
-python create_noisy_pcd.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter]
-python outlier_score.py --filename "{your_dataset}_noisy.npy" --sample_size [your_sample_size] --iter [your_iter]
-python outlier_removal.py --filename "{your_dataset}_noisy.npy" --score [your_threshold]
-python noise_correction.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter] --pred_batch [True or False] --predset [your_prediction_set]
-
-```
 
 # Outlier Detection
 
