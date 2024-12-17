@@ -25,3 +25,14 @@ python outlier_removal.py --filename "{your_dataset}_noisy.npy" --score [your_th
 python noise_correction.py --filename "{your_dataset}.npy" --sample_size [your_sample_size] --iter [your_iter] --pred_batch [True or False] --predset [your_prediction_set]
 
 ```
+
+# The Final Result for Outlier Removal and Noise Correction
+The Quantitative evaluation for the following figure is given:
+F1 score : 0.904
+Recall : 0.970
+Precision : 0.846
+Majority of outliers have been removed, while preserving meaningful features.
+![Algorithm Result](outlier_removal_result.png)
+
+# Result (red) comparison with the ground truth (blue)
+![Algorithm Result vs Ground Truth](result_vs_ground.png)
